@@ -4,10 +4,10 @@ import { lazy } from "react";
 import Layout from "./components/Layout/Layout";
 
 const Movies = lazy(() => import("./pages/MoviesPage/MoviesPage"));
-const Home = lazy(() => import("./pages/Home/Home"));
+const Home = lazy(() => import("./pages/HomePage/HomePage"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 const MovieDetails = lazy(() =>
-  import("./pages/MovieDetailPage/MovieDetailPage")
+  import("./pages/MovieDetailsPage/MovieDetailsPage")
 );
 const Cast = lazy(() => import("./components/MovieCast/MovieCast"));
 const Reviews = lazy(() => import("./components/MovieReviews/MovieReviews"));

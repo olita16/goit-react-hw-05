@@ -11,7 +11,7 @@ import {
 } from "./MovieCast.styled";
 
 const Cast = () => {
-  const [movieCast, setMovieCast] = useState({});
+  const [movieCast, setMovieCast] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const { movieId } = useParams();
@@ -31,6 +31,7 @@ const Cast = () => {
     };
     fetchMovieCast(movieId);
   }, [movieId]);
+
   return (
     <>
       {loading && (
@@ -40,26 +41,23 @@ const Cast = () => {
           radius="9"
           color="#3f51b5"
           ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
-          wrapperClassName=""
           visible={true}
         />
       )}
-      {movieCast?.length < 1 && <p>No info about castomers</p>}
-      {movieCast?.length > 0 && (
+      {movieCast.length === 0 && <p>No info about cast members</p>}
+      {movieCast.length > 0 && (
         <StyledCastList>
-          {movieCast?.map((casts) => {
-            return (
-              <StyledCastItem key={casts.cast_id}>
-                <Image src={getPoster(casts.profile_path)} alt={casts.name} />
-                <CastName>{casts.name}</CastName>
-                <p>{casts.character}</p>
-              </StyledCastItem>
-            );
-          })}
+          {movieCast.map((casts) => (
+            <StyledCastItem key={casts.cast_id}>
+              <Image src={getPoster(casts.profile_path)} alt={casts.name} />
+              <CastName>{casts.name}</CastName>
+              <p>{casts.character}</p>
+            </StyledCastItem>
+          ))}
         </StyledCastList>
       )}
     </>
   );
 };
+
 export default Cast;

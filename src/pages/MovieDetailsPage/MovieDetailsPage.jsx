@@ -13,7 +13,7 @@ import {
   NavItem,
   NavLinkStyl,
   NavList,
-} from "./MovieDetailPage.styled";
+} from "./MovieDetailsPage.styled";
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState({});

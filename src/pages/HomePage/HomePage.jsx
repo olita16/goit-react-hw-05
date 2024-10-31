@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { ThreeDots } from 'react-loader-spinner';
 
 import { MovieList } from '../../components/MovieList/MovieList';
-import { getTrandingMovies } from './../../services/Api';
-import { HomeContainer, TrendingMovies } from './Home.styled';
+import { getTrandingMovies } from '../../services/Api';
+import { HomeContainer, TrendingMovies } from './HomePage.styled';
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);

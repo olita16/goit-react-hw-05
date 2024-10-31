@@ -10,7 +10,7 @@ import {
 } from "./MovieReviews.styled.js";
 
 const Reviews = () => {
-  const [movieReview, setMovieReview] = useState({});
+  const [movieReview, setMovieReview] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const { movieId } = useParams();
@@ -40,13 +40,11 @@ const Reviews = () => {
           radius="9"
           color="#3f51b5"
           ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
-          wrapperClassName=""
           visible={true}
         />
       )}
 
-      {movieReview?.length > 0 ? (
+      {movieReview.length > 0 ? (
         <StyledReviewList>
           {movieReview.map((review) => (
             <StyledReviewItem key={review.id}>
@@ -61,4 +59,5 @@ const Reviews = () => {
     </>
   );
 };
+
 export default Reviews;
