@@ -1,13 +1,12 @@
-
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-import Navigation from '../Navigation/Navigation'; 
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
+import Navigation from "../Navigation/Navigation";
 
 const Layout = () => {
   return (
     <>
       <header>
-        <Navigation /> 
+        <Navigation />
       </header>
       <main>
         <Suspense>

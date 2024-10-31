@@ -1,9 +1,14 @@
-import { useEffect, useState } from 'react';
-import { ThreeDots } from 'react-loader-spinner';
-import { useParams } from 'react-router-dom';
-import { getCastDetails } from '../../services/Api';
-import { getPoster } from '../../services/getImage';
-import { CastName, Image, StyledCastItem, StyledCastList } from './MovieCast.styled';
+import { useEffect, useState } from "react";
+import { ThreeDots } from "react-loader-spinner";
+import { useParams } from "react-router-dom";
+import { getCastDetails } from "../../services/Api";
+import { getPoster } from "../../services/getImage";
+import {
+  CastName,
+  Image,
+  StyledCastItem,
+  StyledCastList,
+} from "./MovieCast.styled";
 
 const Cast = () => {
   const [movieCast, setMovieCast] = useState({});
@@ -13,7 +18,7 @@ const Cast = () => {
 
   useEffect(() => {
     if (!movieId) return;
-    const fetchMovieCast = async id => {
+    const fetchMovieCast = async (id) => {
       try {
         setLoading(true);
         const movieCastData = await getCastDetails(id);
@@ -43,7 +48,7 @@ const Cast = () => {
       {movieCast?.length < 1 && <p>No info about castomers</p>}
       {movieCast?.length > 0 && (
         <StyledCastList>
-          {movieCast?.map(casts => {
+          {movieCast?.map((casts) => {
             return (
               <StyledCastItem key={casts.cast_id}>
                 <Image src={getPoster(casts.profile_path)} alt={casts.name} />

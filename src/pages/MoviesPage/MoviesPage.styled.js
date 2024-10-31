@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SearchForm = styled.form`
   margin: 0px auto 25px;
@@ -17,7 +17,7 @@ export const SearchFormButton = styled.button`
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('/public/icon-search.svg');
+  background-image: url("/public/icon-search.svg");
 
   background-size: 40%;
   background-repeat: no-repeat;
@@ -56,6 +56,6 @@ export const SearchFormButtonLabel = styled.span`
 `;
 
 export const Svg = {
-  width: '80%',
-  height: '80%',
+  width: "80%",
+  height: "80%",
 };

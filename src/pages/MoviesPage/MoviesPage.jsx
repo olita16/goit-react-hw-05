@@ -1,23 +1,23 @@
-import { MovieList } from '../../components/MovieList/MovieList';
-import { useEffect, useState } from 'react';
-import { ThreeDots } from 'react-loader-spinner';
-import { useSearchParams } from 'react-router-dom';
-import { BiSearchAlt } from 'react-icons/bi';
-import { getMovies } from '../../services/Api';
+import { MovieList } from "../../components/MovieList/MovieList";
+import { useEffect, useState } from "react";
+import { ThreeDots } from "react-loader-spinner";
+import { useSearchParams } from "react-router-dom";
+import { BiSearchAlt } from "react-icons/bi";
+import { getMovies } from "../../services/Api";
 import {
   SearchForm,
   SearchFormButton,
   SearchFormButtonLabel,
   SearchFormInput,
   Svg,
-} from './MoviesPage.styled';
+} from "./MoviesPage.styled";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const movie = searchParams.get('query') ?? '';
+  const movie = searchParams.get("query") ?? "";
 
   useEffect(() => {
     if (!movie) return;
@@ -36,7 +36,7 @@ const Movies = () => {
     fetchMovies();
   }, [movie]);
 
-  const onFormSubmit = e => {
+  const onFormSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
     const searchValue = form.elements.search.value;

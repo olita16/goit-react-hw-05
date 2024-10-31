@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
-import { getPoster } from '../../services/getImage';
-import { Image, StyledLink, StyledMovieItem, Title } from './MovieList.styled';
+import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
+import { getPoster } from "../../services/getImage";
+import { Image, StyledLink, StyledMovieItem, Title } from "./MovieList.styled";
 
 export const MovieItem = ({ id, title, name, poster_path }) => {
   const location = useLocation();

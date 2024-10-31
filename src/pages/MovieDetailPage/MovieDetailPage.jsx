@@ -1,8 +1,8 @@
-import { Suspense, useEffect, useRef, useState } from 'react';
-import { ThreeDots } from 'react-loader-spinner';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
-import { getMovieDetails } from '../../services/Api';
-import { getPoster } from '../../services/getImage';
+import { Suspense, useEffect, useRef, useState } from "react";
+import { ThreeDots } from "react-loader-spinner";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { getMovieDetails } from "../../services/Api";
+import { getPoster } from "../../services/getImage";
 import {
   Container,
   Description,
@@ -13,7 +13,7 @@ import {
   NavItem,
   NavLinkStyl,
   NavList,
-} from './MovieDetailPage.styled';
+} from "./MovieDetailPage.styled";
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState({});
@@ -21,13 +21,13 @@ const MovieDetails = () => {
   const [loading, setLoading] = useState(false);
 
   const location = useLocation();
-  const backLinkLocationRef = useRef(location.state?.from ?? '/movies');
+  const backLinkLocationRef = useRef(location.state?.from ?? "/movies");
 
   const { movieId } = useParams();
 
   useEffect(() => {
     if (!movieId) return;
-    const fetchMovieDetails = async id => {
+    const fetchMovieDetails = async (id) => {
       try {
         setLoading(true);
         const movieDetailsData = await getMovieDetails(id);
@@ -64,7 +64,7 @@ const MovieDetails = () => {
           />
           <InfoContainer>
             <div>
-              {' '}
+              {" "}
               <MovieTitle>{movieDetails.title || movieDetails.name}</MovieTitle>
               <Description>Rating: {movieDetails.vote_average}</Description>
               <DetailsTitle>Overview</DetailsTitle>
@@ -72,8 +72,8 @@ const MovieDetails = () => {
               <DetailsTitle>Genres</DetailsTitle>
               <Description>
                 {movieDetails?.genres?.length > 0 && movieDetails?.genres
-                  ? movieDetails.genres.map(genre => genre.name).join(', ')
-                  : 'NO Genres'}
+                  ? movieDetails.genres.map((genre) => genre.name).join(", ")
+                  : "NO Genres"}
               </Description>
             </div>
 

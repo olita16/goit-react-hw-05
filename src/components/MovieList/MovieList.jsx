@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
-import { MovieItem } from './MovieItem';
-import { StyledMovieList } from './MovieList.styled';
+import PropTypes from "prop-types";
+import { MovieItem } from "./MovieItem";
+import { StyledMovieList } from "./MovieList.styled";
 
 export const MovieList = ({ movies }) => {
   return (
     <StyledMovieList>
-      {movies.map(movie => {
+      {movies.map((movie) => {
         return (
           <MovieItem
             key={movie.id}

@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import { ThreeDots } from 'react-loader-spinner';
-import { useParams } from 'react-router-dom';
-import { getReview } from '../../services/Api';
+import { useEffect, useState } from "react";
+import { ThreeDots } from "react-loader-spinner";
+import { useParams } from "react-router-dom";
+import { getReview } from "../../services/Api";
 import {
   ReviewAuthor,
   ReviewContent,
   StyledReviewItem,
   StyledReviewList,
-} from './MovieReviews.styled.js';
+} from "./MovieReviews.styled.js";
 
 const Reviews = () => {
   const [movieReview, setMovieReview] = useState({});
@@ -17,7 +17,7 @@ const Reviews = () => {
 
   useEffect(() => {
     if (!movieId) return;
-    const fetchMovieReview = async id => {
+    const fetchMovieReview = async (id) => {
       try {
         setLoading(true);
         const movieReviewData = await getReview(id);
@@ -48,7 +48,7 @@ const Reviews = () => {
 
       {movieReview?.length > 0 ? (
         <StyledReviewList>
-          {movieReview.map(review => (
+          {movieReview.map((review) => (
             <StyledReviewItem key={review.id}>
               <ReviewAuthor>Author: {review.author}</ReviewAuthor>
               <ReviewContent>{review.content}</ReviewContent>
